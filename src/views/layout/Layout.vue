@@ -1,18 +1,18 @@
 <template>
   <v-container>
     <v-row>
-      <v-flex xs4>
-        <h1>Layouts</h1>
-      </v-flex>
-      <v-flex xs4>
-        <v-btn color="primary">
+      <v-col xs="12" lg="4">
+        <h1>Modelos de Layout</h1>
+      </v-col>
+      <v-col lg="4">
+        <v-btn class="float-right" color="primary">
           <v-icon>mdi-plus</v-icon>Criar modelo de Layout
         </v-btn>
-      </v-flex>
+      </v-col>
     </v-row>
 
-    <v-row>
-      <v-flex xs8 mt-6>
+    <v-row v-if="layoutList">
+      <v-col xs="12" lg="8">
         <v-data-table
           :headers="headers"
           :items="layoutList"
@@ -33,11 +33,23 @@
                 </v-btn>
               </template>
               <div class="menu">
-                <v-list-item>
-                  <v-list-item-content>
-                    <v-list-item-title>Single-line item</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
+                 <v-list dense>
+      <v-list-item-group
+        color="primary"
+      >
+        <v-list-item
+          v-for="(item, i) in items"
+          :key="i"
+        >
+          <v-list-item-icon>
+            <v-icon v-text="item.icon"></v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title v-text="item.text"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-item-group>
+    </v-list>
               </div>
             </v-menu>
           </template>
@@ -45,7 +57,11 @@
         <div class="float-right pt-2">
           <v-pagination v-model="page" :length="pageCount"></v-pagination>
         </div>
-      </v-flex>
+      </v-col>
+    </v-row>
+    <v-row v-else>
+      <v-col cols=
+      <Empty :message="emptyMessage"></Empty>
     </v-row>
   </v-container>
 </template>
@@ -55,7 +71,7 @@
   min-width: 200px !important;
   background-color: #ffffff;
 }
-.item:hover{
+.item:hover {
   background-color: black;
 }
 </style>
