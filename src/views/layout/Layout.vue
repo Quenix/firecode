@@ -5,12 +5,11 @@
         <h1 class="secondary--text">Modelos de Layout</h1>
       </v-col>
       <v-col lg="4">
-        <v-btn class="float-right" color="primary">
+        <v-btn class="float-right" color="primary" @click="criarLayout">
           <v-icon>mdi-plus</v-icon>Criar modelo de Layout
         </v-btn>
       </v-col>
     </v-row>
-
     <v-row v-if="layoutList">
       <v-col xs="12" lg="8">
         <v-data-table

@@ -2,6 +2,7 @@ import LayoutStore from '@/store/modules/layout/layout-module';
 import { Vue, Component } from 'vue-property-decorator';
 import Empty from '@/components/Empty/Empty.vue';
 import Dialog from '@/components/Dialog/Dialog.vue'
+import router from '@/router';
 
 @Component({
   components: { Empty, Dialog }
@@ -71,5 +72,9 @@ export default class Layout extends Vue {
 
   duplicarLayout(){
     console.log('editou layout');
+  }
+
+  criarLayout(){
+    router.push('/layout/novo');
   }
 }
