@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col xs="12" lg="4">
-        <h1>Modelos de Layout</h1>
+        <h1 class="secondary--text">Modelos de Layout</h1>
       </v-col>
       <v-col lg="4">
         <v-btn class="float-right" color="primary">
@@ -33,23 +33,24 @@
                 </v-btn>
               </template>
               <div class="menu">
-                 <v-list dense>
-      <v-list-item-group
-        color="primary"
-      >
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-        >
-          <v-list-item-icon>
-            <v-icon v-text="item.icon"></v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.text"></v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
+                <v-list dense>
+                  <v-list-item-group color="primary">
+                    <v-list-item
+                      v-for="(item, i) in items"
+                      :key="i"
+                      @click="handleAction(item)"
+                    >
+                      <v-list-item-icon>
+                        <v-icon v-text="item.icon"></v-icon>
+                      </v-list-item-icon>
+                      <v-list-item-content>
+                        <v-list-item-title
+                          v-text="item.text"
+                        ></v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list-item-group>
+                </v-list>
               </div>
             </v-menu>
           </template>
@@ -60,18 +61,18 @@
       </v-col>
     </v-row>
     <v-row v-else>
-      <v-col cols=
-      <Empty :message="emptyMessage"></Empty>
+      <v-col lg="8">
+        <Empty :message="emptyMessage"></Empty>
+      </v-col>
     </v-row>
+
+    <Dialog :show="dialog" @close="handleDialog">
+      <template slot="header"> Excluir Modelo de Layout </template>
+      <template slot="helper">
+        Tem certeza que deseja excluir este layout?
+      </template>
+    </Dialog>
   </v-container>
 </template>
 <script lang="ts" src="./layout.component" />
-<style scoped>
-.menu {
-  min-width: 200px !important;
-  background-color: #ffffff;
-}
-.item:hover {
-  background-color: black;
-}
-</style>
+<style scoped></style>
