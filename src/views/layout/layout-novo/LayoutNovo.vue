@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="form">
     <v-row>
       <v-col xs="12" lg="4">
         <h1 class="secondary--text">Novo Modelo de Layout</h1>
@@ -20,6 +20,8 @@
             <v-select
               :items="tipo_arquivo"
               filled
+              chips
+              multiple
               label="Tipo de Arquivo"
             ></v-select>
           </div>
@@ -44,6 +46,25 @@
             ></v-file-input>
           </div>
         </form>
+
+        <v-simple-table>
+          <template v-slot:default>
+            <thead>
+              <tr>
+                <th class="text-left">Campo</th>
+                <th class="text-left">Conteúdo</th>
+                <th class="text-left">Nome</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in tabela" :key="item.campo">
+                <td>{{ item.campo }}</td>
+                <td>{{ item.Conteúdo }}</td>
+                <td>{{ item.Nome }}</td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
       </v-col>
     </v-row>
     <Footer @cancelar="cancelar" @salvar="salvar"></Footer>
@@ -51,4 +72,7 @@
 </template>
 <script lang="ts" src="./layout-novo.component"></script>
 <style scoped>
+.form {
+  margin-bottom: 120px;
+}
 </style>
