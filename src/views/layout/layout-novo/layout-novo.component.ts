@@ -7,7 +7,8 @@ import router from '@/router';
 })
 export default class LayoutNovo extends Vue{
   name!: '';
-  categoria!: [];
+  categoria = [];
+  categorias = ['ANS', 'Bradesco', 'Sul América'];
   tipo_arquivo = ['XLS', 'CSV', 'TXT', 'XML'];
   tipo_layout = ['posicional', 'delimitado'];
   tabela = [

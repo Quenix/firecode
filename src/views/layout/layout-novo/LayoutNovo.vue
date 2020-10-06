@@ -13,15 +13,19 @@
           </div>
 
           <div class="form-group">
-            <v-text-field label="Categoria" filled></v-text-field>
+            <v-combobox
+              v-model="categoria"
+              :items="categorias"
+              label="Categorias"
+              multiple
+              chips
+            ></v-combobox>
           </div>
 
           <div class="form-group">
             <v-select
               :items="tipo_arquivo"
               filled
-              chips
-              multiple
               label="Tipo de Arquivo"
             ></v-select>
           </div>
