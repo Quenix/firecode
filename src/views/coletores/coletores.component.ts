@@ -6,7 +6,7 @@ import router from '@/router';
 @Component({
   components: { Empty, Dialog }
 })
-export default class RegrasGerais extends Vue{
+export default class Coletores extends Vue{
   emptyMessage = "Você não tem nenhuma regra";
   page = 1;
   pageCount = 4;
@@ -16,11 +16,13 @@ export default class RegrasGerais extends Vue{
   categorias = ['ANS', 'Bradesco', 'Sul América'];
   headers = [
     {
-      text: 'Nome da Regra',
+      text: 'Contrato',
       align: 'start',
-      value: 'nome',
+      value: 'contrato',
     },
-    { text: 'Mensagem', value: 'mensagem' },
+    { text: 'Sub-Contrato', value: 'subcontrato' },
+    { text: 'Operadora', value: 'operadora' },
+    { text: 'Coletores', value: 'mensagem' },
     { text: 'Ações', value: 'actions'},
   ];
   items = [
@@ -40,26 +42,37 @@ export default class RegrasGerais extends Vue{
       action: this.removerRegra
     },
   ];
+  coletores = [
+    'FTP', 'EMAIL', 'Sharepoint', 'Webservice', 'Drive'
+  ];
 
   regrasList = [
     {
       "id" : "1",
-      "nome": "Associado Duplicado",
+      "contrato": "12345678/2020",
+      "subcontrato" : "12345678/2020-SP",
+      "operadora" : "Amil",
       "mensagem": "Associado está duplicado no arquivo",
     },
     {
       "id" : "2",
-      "nome": "Campos obrigatórios dependentes menor idade ANS",
+      "contrato": "12345678/2020",
+      "subcontrato" : "12345678/2020-SP",
+      "operadora" : "Amil",
       "mensagem": "Campos obrigatórios para dependentes menores de idade",
     },
     {
       "id" : "3",
-      "nome": "Campos obrigatórios dependentes menor idade ANS",
+      "contrato": "12345678/2020",
+      "subcontrato" : "12345678/2020-SP",
+      "operadora" : "Amil",
       "mensagem": "Campos obrigatórios para dependentes menores de idade",
     },
     {
       "id" : "4",
-      "nome": "Campos obrigatórios dependentes menor idade ANS",
+      "contrato": "12345678/2020",
+      "subcontrato" : "12345678/2020-SP",
+      "operadora" : "Amil",
       "mensagem": "Campos obrigatórios para dependentes menores de idade",
     },
   ]

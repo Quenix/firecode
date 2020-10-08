@@ -5,10 +5,26 @@ import LayoutNovo from '@/views/layout/layout-novo/LayoutNovo.vue'
 import LayoutTitulo from '@/views/layout/layout-titulo/LayoutTitulo.vue';
 
 import RegrasGerais from '@/views/regra/RegrasGerais.vue';
+import RegraNova from '@/views/regra/regra-nova/RegraNova.vue';
+
+import Coletores from '@/views/coletores/Coletores.vue';
+
+import Home from '@/views/home/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
+
+  //temp debug
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+
+  //*
+  //MODELOS DE LAYOUT
+  //*
   {
     path: '/layout',
     name: 'Layout',
@@ -24,10 +40,27 @@ const routes: Array<RouteConfig> = [
     name: 'LayoutTitulo',
     component: LayoutTitulo
   },
+  //*
+  //REGRAS GERAIS
+  //*
   {
     path: '/regras-gerais',
     name: 'RegrasGerais',
     component: RegrasGerais,
+  },
+  {
+    path: '/regras-gerais/novo',
+    name: 'RegraNova',
+    component: RegraNova,
+  },
+
+  //*
+  //COLETORES
+  //*
+  {
+    path: '/coletores',
+    name: 'Coletores',
+    component: Coletores
   }
 
 ];
