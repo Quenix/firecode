@@ -13,3 +13,4 @@ export default Vue.extend({
   name: 'App',
 });
 </script>
+<style> *{ text-transform: none !important; } </style>

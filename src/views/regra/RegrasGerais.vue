@@ -2,19 +2,38 @@
   <v-container>
     <v-row>
       <v-col xs="12" lg="4">
-        <h1 class="secondary--text">Modelos de Layout</h1>
+        <h1 class="secondary--text">Regras Gerais</h1>
       </v-col>
       <v-col lg="4">
-        <v-btn class="float-right" color="primary" @click="criarLayout" min-height="52">
-          <v-icon style="font-size: 17px;" class="mr-2">fa-plus</v-icon>Criar Modelo de Layout
+        <v-btn  x-large class="float-right" color="primary" @click="criarRegra" min-height="52">
+          <v-icon style="font-size: 17px;" class="mr-2">fa-plus</v-icon>Regra
         </v-btn>
       </v-col>
     </v-row>
-    <v-row v-if="layoutList">
+     <v-row class="mt-7">
+      <div class="d-flex justify-space-between">
+        <div class="">
+          <label class="label">Filtre por categoria</label>
+          <v-combobox
+                v-model="filtro"
+                :items="categorias"
+                hide-selected
+                label="Digite a categoria para incluir ou criar"
+                multiple
+                persistent-hint
+                small-chips
+                solo
+                class="mt-2"
+              >
+              </v-combobox>
+        </div>
+      </div>
+    </v-row>
+    <v-row v-if="regrasList.length">
       <v-col xs="12" lg="8">
         <v-data-table
           :headers="headers"
-          :items="layoutList"
+          :items="regrasList"
           :page.sync="page"
           :items-per-page="itemsPerPage"
           hide-default-footer
@@ -66,12 +85,17 @@
     </v-row>
 
     <Dialog :show="dialog" @close="handleDialog">
-      <template slot="header"> Excluir Modelo de Layout </template>
+      <template slot="header"> Excluir Regra </template>
       <template slot="helper">
-        Tem certeza que deseja excluir este layout?
+        Tem certeza que deseja excluir a regra selecionada?
       </template>
     </Dialog>
   </v-container>
 </template>
-<script lang="ts" src="./layout.component" />
-<style scoped></style>
+<script lang="ts" src="./regras-gerais.component"></script>
+<style scoped>
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e1e1e;
+}</style>

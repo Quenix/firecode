@@ -11,6 +11,8 @@ export default class LayoutNovo extends Vue{
   categorias = ['ANS', 'Bradesco', 'Sul América'];
   tipo_arquivo = ['XLS', 'CSV', 'TXT', 'XML'];
   tipo_layout = ['posicional', 'delimitado'];
+  search = null;
+  index = 1;
   tabela = [
     {
       "campo": 1,

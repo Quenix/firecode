@@ -6,7 +6,7 @@
           <h3 class="secondary--text">{{ message }}</h3>
         </div>
         <div class="d-flex justify-center main">
-          <v-icon size="100">mdi-cloud-off-outline</v-icon>
+          <v-icon size="100" style="opacity: 0.2;">fa-folder-open</v-icon>
         </div>
       </v-card>
     </v-col>

@@ -22,5 +22,17 @@ export default class LayoutTitulo extends Vue{
       "Tipo": ["Opção 1", "Opção 2"],
       "Tamanho": "10",
     },
+    {
+      "campo": 2,
+      "Nome": "Tipo do movimento",
+      "Tipo": ["Opção 1", "Opção 2"],
+      "Tamanho": "10",
+    },
+    {
+      "campo": 3,
+      "Nome": "Tipo do movimento",
+      "Tipo": ["Opção 1", "Opção 2"],
+      "Tamanho": "10",
+    },
   ]
 }

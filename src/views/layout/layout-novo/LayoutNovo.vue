@@ -6,51 +6,124 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col xs="12" lg="6">
-        <form>
-          <div class="form-group">
-            <v-text-field label="Nome" filled></v-text-field>
-          </div>
-
-          <div class="form-group">
-            <v-combobox
-              v-model="categoria"
-              :items="categorias"
-              label="Categorias"
-              multiple
-              chips
-            ></v-combobox>
-          </div>
-
-          <div class="form-group">
-            <v-select
-              :items="tipo_arquivo"
-              filled
-              label="Tipo de Arquivo"
-            ></v-select>
-          </div>
-
-          <div class="form-group">
-            <v-select
-              :items="tipo_layout"
-              filled
-              label="Tipo de Layout"
-            ></v-select>
-          </div>
-
-          <div class="form-group">
-            <v-text-field label="Delimitadores de campo" filled></v-text-field>
-          </div>
-
-          <div class="form-group">
-            <v-file-input
-              accept="image/*"
-              label="Layout de referência"
-              filled
-            ></v-file-input>
-          </div>
-        </form>
-
+      <v-col>
+          <v-row>
+            <v-col lg="2">
+              <label class="label">Nome do Layout</label>
+            </v-col>
+            <v-col lg="5">
+              <v-text-field solo></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col lg="2">
+              <label class="label">Categoria</label>
+            </v-col>
+            <v-col lg="5">
+              <v-combobox
+                v-model="categoria"
+                :items="categorias"
+                :search-input.sync="search"
+                :hide-no-data="!search"
+                hide-selected
+                hint="Pressione ENTER para incluir uma nova"
+                label="Digite a categoria para incluir ou criar"
+                multiple
+                persistent-hint
+                small-chips
+                solo
+              >
+                <template v-slot:no-data>
+                  <v-list-item>
+                    <v-list-item-content>
+                      <v-list-item-title>
+                        Nenhum reusltado para "<strong>{{ search }}</strong
+                        >". Pressione <kbd>enter</kbd> para criar esta categoria
+                      </v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </template>
+              </v-combobox>
+            </v-col>
+          </v-row>
+          <v-row class="mt-4">
+            <v-col lg="2">
+              <label class="label">Tipo do Arquivo</label>
+            </v-col>
+            <v-col lg="5">
+              <v-btn-toggle v-model="tipo_arquivo" multiple dense>
+                <div style="background-color: var(--v-background-base)">
+                  <v-btn
+                    small
+                    active-class="primary"
+                    min-width="92"
+                    class="mr-6"
+                    >XLS</v-btn
+                  >
+                  <v-btn
+                    small
+                    active-class="primary"
+                    min-width="92"
+                    class="mr-6"
+                    >CSV</v-btn
+                  >
+                  <v-btn
+                    small
+                    active-class="primary"
+                    min-width="92"
+                    class="mr-6"
+                    >TXT</v-btn
+                  >
+                  <v-btn small active-class="primary" min-width="92">XML</v-btn>
+                </div>
+              </v-btn-toggle>
+            </v-col>
+          </v-row>
+          <v-row class="mt-6">
+            <v-col lg="2">
+              <label class="label">Tipo do Layout</label>
+            </v-col>
+            <v-col lg="5">
+              <v-btn-toggle v-model="tipo_layout" multiple dense>
+                <div style="background-color: var(--v-background-base)">
+                  <v-btn
+                    small
+                    active-class="primary"
+                    min-width="92"
+                    class="mr-6"
+                    >Posicional</v-btn
+                  >
+                  <v-btn
+                    small
+                    active-class="primary"
+                    min-width="92"
+                    class="mr-6"
+                    >Delimitado</v-btn
+                  >
+                </div>
+              </v-btn-toggle>
+            </v-col>
+          </v-row>
+          <v-row class="mt-6">
+            <v-col lg="2">
+              <label class="label">Delimitadores dos Campos</label>
+            </v-col>
+            <v-col lg="5">
+              <v-text-field solo></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col lg="2">
+              <label class="label">Layout de Referência</label>
+            </v-col>
+            <v-col lg="5">
+              <v-file-input accept="image/*" label="File input" solo></v-file-input>
+            </v-col>
+          </v-row>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col lg="8">
         <v-simple-table>
           <template v-slot:default>
             <thead>
@@ -78,5 +151,10 @@
 <style scoped>
 .form {
   margin-bottom: 120px;
+}
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e1e1e;
 }
 </style>
