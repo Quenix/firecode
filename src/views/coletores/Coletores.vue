@@ -17,7 +17,7 @@
       </v-col>
     </v-row>
     <v-row v-if="regrasList.length">
-      <v-col xs="12" lg="8">
+      <v-col xs="12" lg="12">
         <v-data-table
           :headers="headers"
           :items="regrasList"

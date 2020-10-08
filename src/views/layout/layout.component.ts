@@ -18,10 +18,11 @@ export default class Layout extends Vue {
       text: 'Modelos Disponíveis',
       align: 'start',
       value: 'nome',
+      class: 'table-header'
     },
-    { text: 'Tipo de Arquivo', value: 'tipo_arquivo' },
-    { text: 'Tipo de Layout', value: 'tipo_layout' },
-    { text: 'Ações', value: 'actions'},
+    { text: 'Tipo de Arquivo', value: 'tipo_arquivo', class: 'table-header' },
+    { text: 'Tipo de Layout', value: 'tipo_layout', class: 'table-header' },
+    { text: 'Ações', value: 'actions', sortable: false, class: 'table-header'},
   ];
   items = [
     {

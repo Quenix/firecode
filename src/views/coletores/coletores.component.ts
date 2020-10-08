@@ -19,11 +19,12 @@ export default class Coletores extends Vue{
       text: 'Contrato',
       align: 'start',
       value: 'contrato',
+      class: 'table-header'
     },
-    { text: 'Sub-Contrato', value: 'subcontrato' },
-    { text: 'Operadora', value: 'operadora' },
-    { text: 'Coletores', value: 'mensagem' },
-    { text: 'Ações', value: 'actions'},
+    { text: 'Sub-Contrato', value: 'subcontrato', class: 'table-header' },
+    { text: 'Operadora', value: 'operadora', class: 'table-header' },
+    { text: 'Coletores', value: 'mensagem', class: 'table-header' },
+    { text: 'Ações', value: 'actions', sortable: false, class: 'table-header'},
   ];
   items = [
     {

@@ -8,6 +8,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import './assets/css/main.css';
 
 export default Vue.extend({
   name: 'App',

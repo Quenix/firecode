@@ -126,7 +126,7 @@
       <v-col lg="8">
         <v-simple-table>
           <template v-slot:default>
-            <thead>
+            <thead class="table-header">
               <tr>
                 <th class="text-left">Campo</th>
                 <th class="text-left">Conteúdo</th>

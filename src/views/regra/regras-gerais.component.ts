@@ -19,9 +19,10 @@ export default class RegrasGerais extends Vue{
       text: 'Nome da Regra',
       align: 'start',
       value: 'nome',
+      class: 'table-header'
     },
-    { text: 'Mensagem', value: 'mensagem' },
-    { text: 'Ações', value: 'actions'},
+    { text: 'Mensagem', value: 'mensagem', class: 'table-header' },
+    { text: 'Ações', value: 'actions', class: 'table-header', sortable: false},
   ];
   items = [
     {
