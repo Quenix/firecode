@@ -31,6 +31,6 @@ export default class LayoutNovo extends Vue{
   }
 
   salvar(){
-    console.log('salvou!');
+    router.push('/layout/titulo');
   }
 }

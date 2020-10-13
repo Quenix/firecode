@@ -51,7 +51,7 @@
               <label class="label">Tipo do Arquivo</label>
             </v-col>
             <v-col lg="5">
-              <v-btn-toggle v-model="tipo_arquivo" multiple dense>
+              <v-btn-toggle v-model="tipo_arquivo" dense>
                 <div style="background-color: var(--v-background-base)">
                   <v-btn
                     small
@@ -84,7 +84,7 @@
               <label class="label">Tipo do Layout</label>
             </v-col>
             <v-col lg="5">
-              <v-btn-toggle v-model="tipo_layout" multiple dense>
+              <v-btn-toggle v-model="tipo_layout" dense>
                 <div style="background-color: var(--v-background-base)">
                   <v-btn
                     small
@@ -123,14 +123,15 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col lg="8">
-        <v-simple-table>
+      <v-col lg="6">
+        <span> Visualização </span>
+        <v-simple-table class="mt-6">
           <template v-slot:default>
-            <thead class="table-header">
+            <thead style="background-color: #28253f;">
               <tr>
-                <th class="text-left">Campo</th>
-                <th class="text-left">Conteúdo</th>
-                <th class="text-left">Nome</th>
+                <th style="font-size: 16px; color: #ffffff;" class="text-left">Campo</th>
+                <th style="font-size: 16px; color: #ffffff;" class="text-left">Conteúdo</th>
+                <th style="font-size: 16px; color: #ffffff;" class="text-left">Nome</th>
               </tr>
             </thead>
             <tbody>

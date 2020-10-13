@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router';
 import Layout from '@/views/layout/Layout.vue';
 import LayoutNovo from '@/views/layout/layout-novo/LayoutNovo.vue'
 import LayoutTitulo from '@/views/layout/layout-titulo/LayoutTitulo.vue';
+import LayoutTransformacoes from '@/views/layout/layout-transformacoes/LayoutTransformacoes.vue';
 
 import RegrasGerais from '@/views/regra/RegrasGerais.vue';
 import RegraNova from '@/views/regra/regra-nova/RegraNova.vue';
@@ -39,6 +40,11 @@ const routes: Array<RouteConfig> = [
     path: '/layout/titulo',
     name: 'LayoutTitulo',
     component: LayoutTitulo
+  },
+  {
+    path: '/layout/transformacoes',
+    name: 'LayoutTransformacoes',
+    component: LayoutTransformacoes
   },
   //*
   //REGRAS GERAIS

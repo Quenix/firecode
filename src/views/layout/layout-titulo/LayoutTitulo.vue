@@ -1,21 +1,26 @@
 <template>
   <v-container>
     <v-row>
-      <v-col >
+      <v-col>
         <h2 class="secondary--text">Título do Modelo de Layout</h2>
       </v-col>
-      <v-col >
-        <v-stepper style="background-color: var(--v-background-base); box-shadow: none !important;">
-            <v-stepper-header>
-              <v-stepper-step step="1"> Layout </v-stepper-step>
+      <v-col>
+        <v-stepper
+          style="
+            background-color: var(--v-background-base);
+            box-shadow: none !important;
+          "
+        >
+          <v-stepper-header>
+            <v-stepper-step step="1"> Layout </v-stepper-step>
 
-              <v-divider></v-divider>
+            <v-divider></v-divider>
 
-              <v-stepper-step step="2">
-                Transformações e Validações
-              </v-stepper-step>
-            </v-stepper-header>
-          </v-stepper>
+            <v-stepper-step step="2">
+              Transformações e Validações
+            </v-stepper-step>
+          </v-stepper-header>
+        </v-stepper>
       </v-col>
     </v-row>
     <v-row>
@@ -82,12 +87,16 @@
             <tbody>
               <tr v-for="item in tabela" :key="item.campo">
                 <td>
-                  <v-text-field class="mt-5" solo :value="item.campo"></v-text-field>
+                  <v-text-field
+                    class="mt-5"
+                    solo
+                    :value="item.campo"
+                  ></v-text-field>
                 </td>
                 <td>
                   <v-text-field class="mt-5" solo :value="item.Nome">
                   </v-text-field>
-                  </td>
+                </td>
                 <td>
                   <v-select
                     class="mt-5"
@@ -104,32 +113,15 @@
                     solo
                   ></v-text-field>
                 </td>
-                <td>
-                  <v-btn color="#e63946">
-                    <v-icon color="#fff" style="font-size: 19px"
-                      >fa-exclamation</v-icon
-                    >
-                  </v-btn>
-                </td>
-                <td>
-                  <v-btn color="#1aa4d2">
-                    <v-icon color="#fff" style="font-size: 19px"
-                      >fa-clipboard-check</v-icon
-                    >
-                  </v-btn>
-                </td>
-                <td>
-                  <v-btn color="#43aa8b">
-                    <v-icon color="#fff" style="font-size: 19px"
-                      >fa-thumbs-up</v-icon
-                    >
-                  </v-btn>
-                </td>
-                <td>
-                  <v-btn color="#43aa8b">
-                    <v-icon color="#fff" style="font-size: 19px"
-                      >fa-thumbs-up</v-icon
-                    >
+                <td v-for="(atributo, key) in item.atributos" :key="atributo">
+                  <v-btn
+                    @click="alterarValor(atributo, key, item)"
+                    :color="botoes[atributo].color"
+                    :title="botoes[atributo].hover"
+                  >
+                    <v-icon color="#fff" style="font-size: 21px">
+                      {{ botoes[atributo].icon }}
+                    </v-icon>
                   </v-btn>
                 </td>
                 <td>
@@ -150,6 +142,7 @@
         </v-simple-table>
       </v-col>
     </v-row>
+    <Footer @cancelar="cancelar" @salvar="salvar"></Footer>
   </v-container>
 </template>
 <script lang="ts" src="./layout-titulo.component"></script>
