@@ -1,6 +1,10 @@
 import {Vue, Component} from 'vue-property-decorator';
+import Footer from '@/components/Footer/Footer.vue';
+import router from '@/router';
 
-@Component
+@Component({
+  components: {Footer}
+})
 export default class LayoutTransformacoes extends Vue {
   checkbox1 = true;
   checkbox2 = false;
@@ -55,4 +59,12 @@ export default class LayoutTransformacoes extends Vue {
       }
     },
   ];
+
+  cancelar(){
+    router.push('/layout');
+  }
+
+  salvar(){
+    router.push('/layout/titulo');
+  }
 }

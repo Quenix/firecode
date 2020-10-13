@@ -16,6 +16,7 @@
   left: 0;
   bottom: 0;
   box-shadow: 0 -1px 10px 0 rgba(0, 0, 0, 0.21);
+  z-index: 1;
 }
 .button{
   min-height: 50px;

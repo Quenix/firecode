@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="margin-bottom: 120px;">
     <v-row>
       <v-col>
         <h2 class="secondary--text">Título do Modelo de Layout</h2>
@@ -179,6 +179,7 @@
         </v-expansion-panel>
       </v-expansion-panels>
     </v-row>
+    <Footer @cancelar="cancelar" @salvar="salvar"></Footer>
   </v-container>
 </template>
 <script lang="ts" src="./layout-transformacoes.component"></script>
