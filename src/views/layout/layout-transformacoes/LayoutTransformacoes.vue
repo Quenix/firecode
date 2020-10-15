@@ -82,7 +82,7 @@
                     <v-toolbar color="secondary" style="color: #fff"
                       >Transformações</v-toolbar
                     >
-                    <v-list-item-group v-model="model" multiple>
+                    <v-list-item-group v-model="item.transformacoes" multiple>
                       <template v-for="(item, i) in transformacoes">
                         <v-divider
                           v-if="!item"
@@ -120,7 +120,7 @@
                     <v-toolbar color="secondary" style="color: #fff"
                       >Validações</v-toolbar
                     >
-                    <v-list-item-group v-model="model" multiple>
+                    <v-list-item-group v-model="item.validacoes" multiple>
                       <template v-for="(item, i) in validacoes">
                         <v-divider
                           v-if="!item"

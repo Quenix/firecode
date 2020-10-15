@@ -14,4 +14,18 @@ export default Vue.extend({
   name: 'App',
 });
 </script>
-<style> *{ text-transform: none !important; } </style>
+<style> *{ text-transform: none !important; }
+.scrollbar::-webkit-scrollbar {
+  width: .5em;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  opacity: 1;
+  background-color: #f4f4f4;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--v-primary-base);
+  border-radius: 10px;
+}
+ </style>

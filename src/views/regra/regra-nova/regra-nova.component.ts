@@ -13,17 +13,38 @@ export default class RegraNova extends Vue{
   tipo_descricao = ['Dias', 'Semanas', 'Meses'];
   search = null;
   index = 1;
+  fonte_dados = ['Registro de Movimentação'];
 
+  condicoes:any = [];
 
   cancelar(){
     router.push('/regras-gerais');
   }
 
   salvar(){
-    console.log('salvou!');
+    router.push('/regras-gerais');
   }
 
-  adicionarSubCondicao(){
-    console.log('adicionou sub-condicao')
+  adicionarCondicao(){
+    const condicao = {
+      "id": this.index,
+      "sub": []
+    };
+
+    this.condicoes.push(condicao);
+    this.index += 1;
+  }
+
+  adicionarSubCondicao(index:any){
+    const object = "Dummy";
+    index.sub.push(object);
+  }
+
+  removerCondicao(index:any){
+    this.condicoes.pop(index);
+  }
+
+  removerSubCondicao(index:any, sub:any){
+    index.sub.pop(sub);
   }
 }

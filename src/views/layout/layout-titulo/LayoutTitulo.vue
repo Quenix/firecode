@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="margin-bottom: 120px;">
     <v-row>
       <v-col>
         <h2 class="secondary--text">Título do Modelo de Layout</h2>
@@ -68,7 +68,7 @@
 
     <v-row>
       <v-col>
-        <v-simple-table>
+        <v-simple-table class="scrollbar" style="max-height: 400px; overflow-y: scroll;">
           <template v-slot:default>
             <thead>
               <tr>
@@ -81,7 +81,9 @@
                 <th class="text-left">Exclusão</th>
                 <th class="text-left">Alteração</th>
                 <th class="text-left">Descrição</th>
-                <th></th>
+                <th><v-btn small color="primary"
+                    ><v-icon style="font-size: 18px">fa-plus</v-icon></v-btn
+                  ></th>
               </tr>
             </thead>
             <tbody>
@@ -130,11 +132,6 @@
                       >fa-pen-square</v-icon
                     >
                   </v-btn>
-                </td>
-                <td>
-                  <v-btn color="primary"
-                    ><v-icon style="font-size: 18px">fa-plus</v-icon></v-btn
-                  >
                 </td>
               </tr>
             </tbody>

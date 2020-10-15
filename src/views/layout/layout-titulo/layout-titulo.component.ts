@@ -79,6 +79,42 @@ export default class LayoutTitulo extends Vue{
         "alteracao": "opcional"
       }
     },
+    {
+      "campo": 4,
+      "Nome": "Tipo do movimento",
+      "Tipo": ["Opção 1", "Opção 2"],
+      "Tamanho": "10",
+      "atributos" : {
+        "implantacao" : "obrigatorio",
+        "inclusao": "condicional",
+        "exclusao": "opcional",
+        "alteracao": "opcional"
+      }
+    },
+    {
+      "campo": 5,
+      "Nome": "Tipo do movimento",
+      "Tipo": ["Opção 1", "Opção 2"],
+      "Tamanho": "10",
+      "atributos" : {
+        "implantacao" : "obrigatorio",
+        "inclusao": "condicional",
+        "exclusao": "opcional",
+        "alteracao": "opcional"
+      }
+    },
+    {
+      "campo": 6,
+      "Nome": "Tipo do movimento",
+      "Tipo": ["Opção 1", "Opção 2"],
+      "Tamanho": "10",
+      "atributos" : {
+        "implantacao" : "obrigatorio",
+        "inclusao": "condicional",
+        "exclusao": "opcional",
+        "alteracao": "opcional"
+      }
+    },
   ];
 
   cancelar(){

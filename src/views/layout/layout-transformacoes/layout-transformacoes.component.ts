@@ -24,39 +24,20 @@ export default class LayoutTransformacoes extends Vue {
     {
       "campo": 1,
       "Nome": "Tipo do movimento",
-      "Tipo": ["Opção 1", "Opção 2"],
-      "Tamanho": "10",
-      "atributos" : {
-        "implantacao" : "obrigatorio",
-        "inclusao": "condicional",
-        "exclusao": "opcional",
-        "alteracao": "opcional"
-      }
-
+      "transformacoes": [],
+      "validacoes": []
     },
     {
       "campo": 2,
       "Nome": "Benefício",
-      "Tipo": ["Opção 1", "Opção 2"],
-      "Tamanho": "10",
-      "atributos" : {
-        "implantacao" : "obrigatorio",
-        "inclusao": "condicional",
-        "exclusao": "opcional",
-        "alteracao": "opcional"
-      }
+      "transformacoes": [],
+      "validacoes": []
     },
     {
       "campo": 3,
       "Nome": "Operadora",
-      "Tipo": ["Opção 1", "Opção 2"],
-      "Tamanho": "10",
-      "atributos" : {
-        "implantacao" : "obrigatorio",
-        "inclusao": "condicional",
-        "exclusao": "opcional",
-        "alteracao": "opcional"
-      }
+      "transformacoes": [],
+      "validacoes": []
     },
   ];
 

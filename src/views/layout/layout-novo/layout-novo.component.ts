@@ -16,13 +16,33 @@ export default class LayoutNovo extends Vue{
   tabela = [
     {
       "campo": 1,
-      "Conteúdo": "Inclusão",
-      "Nome": "Tipo do movimento"
+      "conteudo": "Inclusão",
+      "nome": "Tipo do movimento"
     },
     {
       "campo": 2,
-      "Conteúdo": "Saúde",
-      "Nome": "Benefício"
+      "conteudo": "Saúde",
+      "nome": "Benefício"
+    },
+    {
+      "campo": 3,
+      "conteudo": "Saúde",
+      "nome": "Benefício"
+    },
+    {
+      "campo": 4,
+      "conteudo": "Saúde",
+      "nome": "Benefício"
+    },
+    {
+      "campo": 5,
+      "conteudo": "Saúde",
+      "nome": "Benefício"
+    },
+    {
+      "campo": 6,
+      "conteudo": "Saúde",
+      "nome": "Benefício"
     }
   ]
 
